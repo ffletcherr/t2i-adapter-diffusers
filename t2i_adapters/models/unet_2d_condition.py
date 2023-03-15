@@ -476,7 +476,10 @@ class T2IAdapterUNet2DConditionModel(ModelMixin, ConfigMixin):
         sample: torch.FloatTensor,
         timestep: Union[torch.Tensor, float, int],
         encoder_hidden_states: torch.Tensor,
-        adapter_features: Optional[List[torch.Tensor]],
+        f_1: torch.Tensor,
+        f_2: torch.Tensor,
+        f_3: torch.Tensor,
+        f_4: torch.Tensor,
         class_labels: Optional[torch.Tensor] = None,
         timestep_cond: Optional[torch.Tensor] = None,
         attention_mask: Optional[torch.Tensor] = None,
@@ -504,6 +507,7 @@ class T2IAdapterUNet2DConditionModel(ModelMixin, ConfigMixin):
         # The overall upsampling factor is equal to 2 ** (# num of upsampling layears).
         # However, the upsampling interpolation output size can be forced to fit any upsampling size
         # on the fly if necessary.
+        adapter_features = [f_1, f_2, f_3, f_4]
         default_overall_up_factor = 2**self.num_upsamplers
 
         # upsample size should be forwarded when sample is not a multiple of `default_overall_up_factor`
