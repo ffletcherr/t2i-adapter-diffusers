@@ -476,12 +476,12 @@ class T2IAdapterUNet2DConditionModel(ModelMixin, ConfigMixin):
         sample: torch.FloatTensor,
         timestep: Union[torch.Tensor, float, int],
         encoder_hidden_states: torch.Tensor,
+        adapter_features: Optional[List[torch.Tensor]],
         class_labels: Optional[torch.Tensor] = None,
         timestep_cond: Optional[torch.Tensor] = None,
         attention_mask: Optional[torch.Tensor] = None,
         cross_attention_kwargs: Optional[Dict[str, Any]] = None,
         return_dict: bool = True,
-        adapter_features: Optional[List[torch.Tensor]] = None,
     ) -> Union[UNet2DConditionOutput, Tuple]:
         r"""
         Args:
