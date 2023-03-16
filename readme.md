@@ -1,6 +1,12 @@
-# T2I Adapter Diffusers
+# T2I Adapter Diffusers + ONNX + TensorRT
 
-Developer-friendly port of the [T2I-Adapter](https://github.com/TencentARC/T2I-Adapter), [Paper](https://arxiv.org/abs/2302.08453) to `diffusers`. As a result, you are able to use all the pipelines at diffusers. You can also use my [LoRA](https://github.com/cloneofsimo/lora).
+Convert and Inference T2I-Adapter models in ONNX and TensorRT. Polygraphy is used to convert from onnx to tensorrt and create engine file.
+
+see [t2i_adapter_trt.ipynb](https://github.com/ffletcherr/t2i-adapter-diffusers/blob/master/t2i_adapter_trt.ipynb)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ffletcherr/t2i-adapter-diffusers/blob/master/t2i_adapter_trt.ipynb)
+
+_______________
 
 <!-- #region -->
 <p align="center">
